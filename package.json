@@ -1,0 +1,42 @@
+{
+  "name": "weroll-kickstarter-react-web",
+  "version": "1.0.0",
+  "description": "An mini react web app with weroll framework.",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "@loadable/component": "^5.11.0",
+    "axios": "0.19.0",
+    "lodash": "4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-easy-state": "^6.1.3",
+    "react-lazy-load-image-component": "^1.3.2",
+    "react-router-dom": "5.1.2",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "weroll": "^1.5.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-loader": "^8.0.6",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "copy-webpack-plugin": "^5.0.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "4.41.2",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "4.2.2",
+    "webpack-node-externals": "1.7.2"
+  },
+  "scripts": {
+    "dev": "webpack --config webpack.client.js --watch",
+    "dev:server": "node --trace-warnings main.js -env=localdev -debug",
+    "build:prod": "rm -rf dist && webpack -p --config webpack.client.prod.js --mode production"
+  },
+  "author": "Jay Liang",
+  "license": "MIT"
+}
