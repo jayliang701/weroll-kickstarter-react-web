@@ -17,10 +17,8 @@ exports.extend = function (App) {
         [webpackDevMiddleware(compiler, {
             publicPath: config.output.publicPath
         })],
-        [webpackHotMiddleware(compiler, {
-            // Options
-            path: '/__webpack_hmr',
-            heartbeat: 10000,
+        [webpackHotMiddleware(compiler, { 
+            
         })]
     )
 
