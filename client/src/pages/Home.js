@@ -1,11 +1,14 @@
 import React from 'react';
 import { sleep } from '../utils';
-import { data } from '../model';
+import { data, callAPI } from '../model';
 
 export const preload = async (/*data, user, setting, query*/) => {
-    await sleep(2000);
+    // await sleep(2000);
+
+    let res = await callAPI('system.now', { format:1 });
+    console.log(res);
     return {
-        text: 'Welcome!'
+        text: 'Welcome! Time: ' + new Date(res.time).toLocaleString(),
     };
 }
 
