@@ -11,7 +11,7 @@ export const preload = (importer) => {
             model.update(data);
         }
         return view;
-    }, {
+    }/*, {
         fallback: <div>Loading...</div>,
-    });
+    }*/);
 }

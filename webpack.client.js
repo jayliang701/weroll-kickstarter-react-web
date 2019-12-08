@@ -17,15 +17,13 @@ const config = {
 
   // Tell webpack where to put output file
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'client/dist'),
     publicPath: '/'
   },
   devtool: 'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ]
+  ],
 };
 
 module.exports = merge(baseConfig, config);

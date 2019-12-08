@@ -23,6 +23,10 @@ export const update = (params) => {
 }
 
 export const callAPI = async (method, params) => {
+    let headers = {};
+    if (user.auth || user.sess) {
+        headers['Authorization'] = `Bearer ${user.auth || user.sess}`;
+    }
     let res = await axios({
         method: 'post',
         url: setting.API_GATEWAY,
@@ -32,7 +36,8 @@ export const callAPI = async (method, params) => {
                 ...(params || {}),
             }
         },
-        responseType: 'json'
+        responseType: 'json',
+        headers,
     });
     let result, err;
     if (res.data && res.data.hasOwnProperty('code')) {

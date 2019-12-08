@@ -1,6 +1,7 @@
 import React from 'react';
 import ErrorBoundary from './components/ErrorBoundry';
-import { lookUpPage } from './routes';
+// import { lookUpPage } from './routes';
+import routes from './routes';
 import { preload } from './preload';
 
 import './styles/normalize.css';
@@ -8,7 +9,7 @@ import './styles/normalize.css';
 class App extends React.Component {
     constructor(props) {
         super(props);
-        let View = lookUpPage(window.location.pathname);
+        let View = routes[window.__VIEW__];
         if (View) View = preload(View);
         this.state = {
             View,

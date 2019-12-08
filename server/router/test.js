@@ -5,6 +5,14 @@
 var PATH = require("path");
 var FS = require("fs");
 
+const renderHomePage = async (req, res, output, user) => {
+    return { };
+}
+
+const renderAboutPage = async (req, res, output, user) => {
+    return { };
+}
+
 const users = [
     { id:"123", nickname:"Jackson" },
     { id:"456", nickname:"Mike" },
@@ -29,8 +37,10 @@ const renderUserProfile = async (req, res, output, user) => {
 
 exports.getRouterMap = function() {
     return [
-        { url: "/user", view: "user", handle: renderUser, needLogin:false },
-        { url: "/user/:id", view: "user", handle: renderUserProfile, needLogin:false }
+        { url: "/", view: "Home", handle: renderHomePage, needLogin:false },
+        { url: "/about", view: "AboutUs", handle: renderAboutPage, needLogin:false },
+        { url: "/user", view: "User", handle: renderUser, needLogin:false },
+        { url: "/user/:id", view: "UserProfile", handle: renderUserProfile, needLogin:false }
     ];
 }
 

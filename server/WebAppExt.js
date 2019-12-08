@@ -24,21 +24,21 @@ exports.extend = function (App) {
         //     <StaticRouter location={req.url} context={data}>
         //         <ClientApp />
         //     </StaticRouter>
-        // );
+        // );,
         
         res.set('content-type', 'text/html;charset=utf-8');
         return res.send(`<!DOCTYPE html>
                     <head>
                         <meta charset="utf-8">
                         <title>${Setting.siteName}</title>
-                        
                         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
                         <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
                         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
                     </head>
                     <body>
                         <div id="root"></div>
-                        <script>window.__DATA__=${JSON.stringify(data || {})};</script>
+                        <script>window.__VIEW__='${view}';window.__DATA__=${JSON.stringify(data || {})};</script>
+                        <script src="${Setting.cdn.res}/vendor.js"></script>
                         <script src="${Setting.cdn.res}/bundle.js"></script>
                     </body>
             </html>`);
