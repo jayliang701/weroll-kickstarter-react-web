@@ -6,7 +6,7 @@ module.exports = {
     $VARS:{
         env:"localdev",
         site:"http://localhost:3000",
-        host:"localhost",
+        host:"0.0.0.0",
         port:3000,
         apiCompress:false,
         redisPassword:""
@@ -67,7 +67,7 @@ module.exports = {
     },
 
     //site domain
-    site:"http://${host}:${port}/",
+    site:"${site}/",
     siteName:"React SSR with Weoll",
     /* mail service config
     mail: {
@@ -87,7 +87,7 @@ module.exports = {
     },
     */
     cdn:{
-        res:"http://${host}:${port}"
+        res:"${site}"
     },
     /* Ecosystem config
     ecosystem: {

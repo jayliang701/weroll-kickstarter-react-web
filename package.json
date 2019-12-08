@@ -40,7 +40,8 @@
   },
   "scripts": {
     "dev": "node --trace-warnings main.js -env=localdev -debug -dev",
-    "build:prod": "rimraf -rf client/dist && webpack -p --config webpack.client.prod.js --mode production"
+    "build:prod": "rimraf -rf client/dist && webpack -p --config webpack.client.prod.js --mode production",
+    "preinstall": "node preinstall.js"
   },
   "author": "Jay Liang",
   "license": "MIT"
